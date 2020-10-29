@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "MSIT6203Lab10": {
+    "MSIT6203Lab9": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/MSIT6203Lab10",
+            "outputPath": "dist/MSIT6203Lab9",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "MSIT6203Lab10:build"
+            "browserTarget": "MSIT6203Lab9:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "MSIT6203Lab10:build:production"
+              "browserTarget": "MSIT6203Lab9:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "MSIT6203Lab10:build"
+            "browserTarget": "MSIT6203Lab9:build"
           }
         },
         "test": {
@@ -110,15 +110,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "MSIT6203Lab10:serve"
+            "devServerTarget": "MSIT6203Lab9:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "MSIT6203Lab10:serve:production"
+              "devServerTarget": "MSIT6203Lab9:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "MSIT6203Lab10"
+    }
+  },
+  "defaultProject": "MSIT6203Lab9",
+  "cli": {
+    "analytics": false
+  }
 }
