@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { StudentService } from '../student.service'
+import { StudentService } from '../student.service';  
 
 @Component({
   selector: 'app-new-student-form',
@@ -7,18 +7,46 @@ import { StudentService } from '../student.service'
   styleUrls: ['./new-student-form.component.css']
 })
 export class NewStudentFormComponent implements OnInit {
-  @Input() firstName: string;
-  @Input() lastName: string;
-  @Input() contactEmail: string;
+  constructor(private studentService: StudentService){ }
+  ngOnInit(){  }
 
-  constructor(private _myService: StudentService) { }
-  onSubmit(){
-    console.log("You submitted: " + this.firstName + " " + this.lastName + " " 
-    + this.contactEmail);
-    this._myService.addStudents(this.firstName ,this.lastName , this.contactEmail);
+  minCharacterLength: number = 2;
+  firstNameHint: string = 'Enter first name'
+  lastNameHint: string = 'Enter last name'
+  emailHint: string = 'Enter your email'
+  majorHint: string = 'Enter your major '
+  creditEarnedHint: string = 'Enter your earned credit hours'
+  phoneNumberHint: string = 'Enter your phone number'
+  introHint: string = 'Tell us about yourself'
+  interestHint: string = 'Please enter your interested field'
+
+  @Input() firstName: string = "";
+  @Input() lastName: string = "";
+  @Input() email: string = "";
+  @Input() phoneNumber: string = "";
+  @Input() major: string = "";
+  @Input() creditEarned: string = "";
+  @Input() interest: string = "";
+  @Input() selfIntro: string = "";
+
+  logName(x) {
+    console.log("Value you entered: " + x);
   }
-  
-  ngOnInit(): void {
+
+  logComment(x) {
+    this.logName(x);
+  }
+
+  onClick() {
+    this.studentService.addStudent(this.firstName, this.lastName, this.email, 
+                                    this.phoneNumber,this.major, 
+                                    this.creditEarned, this.interest, this.selfIntro);
+    console.log("You entered below info > " + "\nFirst Name: " + this.firstName 
+                                          + "\nLast Name: "+ this.lastName + "\nEmail: "+ this.email 
+                                          +"\nPhone Number: "+ this.phoneNumber+ "\nMajor: "+this.major 
+                                          +"\nCredit Earned: "+ this.creditEarned +"\nInterested Field: "+ this.interest 
+                                          +"\nSelf Intro: "+ this.selfIntro);
   }
 
 }
+
