@@ -7,11 +7,11 @@ const  studentSchema = new mongoose.Schema(
     firstName:  { type: String,   required: true },
     lastName:  { type: String,  required: true},
     email:  { type: String, required: true},
-    
     phoneNumber:  { type: String,  required: true},
     major:  { type: String, required: true},
-    interest:  { type: String, required: true},
-    selfIntro:  { type: String, required: true}
+    creditEarned: { type: Number, required: false},
+    interest:  { type: String, required: false},
+    selfIntro:  { type: String, required: false}
   }
   );
 

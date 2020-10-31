@@ -2,13 +2,16 @@ const express = require('express');
 const bodyParser  = require('body-parser');
 const app = express();
 const mongoose = require('mongoose');
+
 //specify where to find the schema
 const Student = require('./models/student')
+
 // connect and display the status 
 mongoose.connect('mongodb://localhost:27017/MSIT6203', 
    { useNewUrlParser: true,
     useUnifiedTopology: true
    })
+
   .then(() => { console.log("connected"); })
   .catch(() => { console.log("error connecting"); });
 
@@ -23,7 +26,7 @@ app.use(bodyParser.json())
 app.use((req, res, next) => {
    console.log('This line is always called');
    res.setHeader('Access-Control-Allow-Origin', '*'); //can connect from any host
-   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, OPTIONS, DELETE'); //allowable methods
+   res.setHeader('Access-Control-Allow-Methods', 'GET, PUT, POST, OPTIONS, DELETE'); //allowable methods
    res.setHeader('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept');
    next();
 });
@@ -48,7 +51,7 @@ app.post('/students', (req, res, next) => {
     lastName: req.body.lastName,
     email: req.body.email,
     phoneNumber: req.body.phoneNumber,
-    specialization: req.body.firstName,
+    major: req.body.major,
     interest: req.body.interest,
     selfIntro: req.body.selfIntro
   });

@@ -1,4 +1,4 @@
-<h3 style="margin-left:20px;">New Student/Tutor signup form<br></h3>
+<h3 style="margin-left:20px;">New Student/Tutor sign-up form<br></h3>
 
 <div class= "body">
   <h3>Please enter your information to sign up.</h3>
@@ -29,7 +29,7 @@
 <!-- Email -->
 
 <div class="form-group">
-        <label for="email">Contact Email<br /></label>
+        <label for="email">Email<br /></label>
         <input
           [(ngModel)] = "email"
           name="email"
@@ -56,7 +56,7 @@
   />
 </div>
 
-<!-- Specialization -->
+<!-- Major -->
 
 <div class="form-group">
         <label for="major">Major <br /></label>
@@ -72,10 +72,10 @@
       </div>
     
 
-<!-- Education -->
+<!-- Credit Earned -->
 
 <div class="form-group">
-  <label for="creditEarned">Credit earned (including CGPA)<br /></label>
+  <label for="creditEarned">Credit earned <br /></label>
   <input
     [(ngModel)] = "creditEarned"
     name="creditEarned"
@@ -87,10 +87,27 @@
   />
 </div>
 
-<!-- Self Description -->
+
+<!-- Interest -->
+
+<div class="form-group">
+  <label for="comment">Interest<br /></label>
+  <textarea
+    [(ngModel)] = "interest"
+    name="interest"
+    id="interest"
+    cols="30"
+    rows="5"
+    placeholder={{interestHint}}
+    class="form-control"
+  ></textarea>
+</div>
+
+
+<!-- Self Introduction -->
 
   <div class="form-group">
-    <label for="comment">About yourself <br /></label>
+    <label for="comment">Self Introduction<br /></label>
     <textarea
       [(ngModel)] = "selfIntro"
       name="comment"

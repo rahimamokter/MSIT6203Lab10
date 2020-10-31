@@ -11,14 +11,15 @@ export class NewStudentFormComponent implements OnInit {
   ngOnInit(){  }
 
   minCharacterLength: number = 2;
-  firstNameHint: string = 'Enter first name'
-  lastNameHint: string = 'Enter last name'
-  emailHint: string = 'Enter your email'
+  firstNameHint: string = '*Enter first name'
+  lastNameHint: string = '*Enter last name'
+  emailHint: string = '*Enter your email'
+  phoneNumberHint: string = '*Enter your phone number'
   majorHint: string = 'Enter your major '
   creditEarnedHint: string = 'Enter your earned credit hours'
-  phoneNumberHint: string = 'Enter your phone number'
-  introHint: string = 'Tell us about yourself'
   interestHint: string = 'Please enter your interested field'
+  introHint: string = 'Tell us about yourself'
+  
 
   @Input() firstName: string = "";
   @Input() lastName: string = "";
